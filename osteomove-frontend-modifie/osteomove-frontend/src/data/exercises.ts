@@ -1,0 +1,327 @@
+// src/data/exercises.ts
+// Contenu issu de la spécification pré-validée (titres, consignes et contre-indications inchangés).
+// approvedByProfessional reste à false tant qu'un kinésithérapeute ou un médecin n'a pas relu
+// et validé ce contenu par écrit. Ne le passez à true qu'après cette validation.
+
+import type { Exercise } from "../types";
+
+export const exercises: Exercise[] = [
+  // ───── Équilibre ─────
+  {
+    id: "bal-001",
+    title: "Transfert de poids debout avec appui",
+    category: "balance",
+    description:
+      "Exercice fondamental d'équilibre : transférer doucement le poids d'un pied à l'autre en gardant les mains sur un support stable (dossier de chaise, plan de travail). Peut aider à améliorer la stabilité debout et la confiance en l'équilibre.",
+    videoUrl: "/videos/placeholder-balance-01.mp4",
+    durationMinutes: 8,
+    difficulty: "beginner",
+    equipment: ["Chaise stable ou plan de travail comme appui"],
+    instructions: [
+      "Tenez-vous debout derrière une chaise stable, mains posées sur le dossier.",
+      "Écartez légèrement les pieds, largeur des hanches.",
+      "Transférez lentement votre poids sur le pied droit, en gardant le dos droit.",
+      "Revenez au centre, puis transférez sur le pied gauche.",
+      "Continuez pendant 2 minutes, puis reposez-vous 30 secondes.",
+      "Répétez 3 fois.",
+    ],
+    contraindications: [
+      "Éviter si douleur importante aux hanches ou aux genoux pendant le transfert.",
+      "Nécessite un appui stable : ne pas réaliser sans support à portée de main.",
+      "En cas de vertiges ou d'étourdissements, arrêter immédiatement.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Gardez toujours les mains sur un appui stable. Arrêtez en cas de vertige.",
+  },
+  {
+    id: "bal-002",
+    title: "Position sur un pied avec appui (progressif)",
+    category: "balance",
+    description:
+      "Renforce l'équilibre sur une jambe en toute sécurité : lever un pied légèrement du sol tout en gardant les mains sur un appui. Progression douce du temps de maintien.",
+    videoUrl: "/videos/placeholder-balance-02.mp4",
+    durationMinutes: 6,
+    difficulty: "intermediate",
+    equipment: ["Chaise stable ou mur comme appui"],
+    instructions: [
+      "Tenez-vous debout, mains sur le dossier d'une chaise.",
+      "Levez lentement le pied droit de quelques centimètres du sol.",
+      "Maintenez 5 secondes, puis reposez.",
+      "Répétez 5 fois de chaque côté.",
+      "Progressez à 10 secondes de maintien si l'exercice est facile.",
+      "Ne jamais fermer les yeux pendant cet exercice.",
+    ],
+    contraindications: [
+      "Éviter si antécédent de chute récente sans supervision.",
+      "Ne pas réaliser sans appui à portée de main.",
+      "Éviter en cas de fracture vertébrale récente (< 3 mois) sans avis médical.",
+      "Arrêter si douleur au pied d'appui.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Appui obligatoire. Ne jamais fermer les yeux. Supervisé si chutes antérieures.",
+  },
+  {
+    id: "bal-003",
+    title: "Marche en ligne droite avec appui léger",
+    category: "balance",
+    description:
+      "Exercice de marche contrôlée : avancer en posant un pied devant l'autre le long d'une ligne imaginaire, avec un appui léger à portée de main. Travaille la coordination et la stabilité en mouvement.",
+    videoUrl: "/videos/placeholder-balance-03.mp4",
+    durationMinutes: 10,
+    difficulty: "intermediate",
+    equipment: ["Couloir dégagé", "Mur ou plan de travail comme appui léger"],
+    instructions: [
+      "Placez-vous dans un couloir dégagé, à proximité d'un mur.",
+      "Avancez en posant le talon d'un pied juste devant les orteils de l'autre.",
+      "Gardez les bras légèrement écartés ou effleurez le mur si nécessaire.",
+      "Parcourez 5 mètres, puis faites demi-tour.",
+      "Répétez 4 fois.",
+      "Regardez devant vous, pas vos pieds.",
+    ],
+    contraindications: [
+      "Éviter si troubles de l'équilibre sévères non évalués par un professionnel.",
+      "Ne pas réaliser sur sol glissant ou encombré.",
+      "Éviter en cas de fracture vertébrale récente sans avis médical.",
+      "Arrêter en cas de sensation d'instabilité.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Sol dégagé obligatoire. Appui à portée de main. Regard devant.",
+  },
+
+  // ───── Renforcement ─────
+  {
+    id: "str-001",
+    title: "Extension des genoux assis (quadriceps)",
+    category: "strength",
+    description:
+      "Renforcement des quadriceps en position assise sécurisée : tendre lentement la jambe sans soulever la cuisse de la chaise. Peut contribuer à la stabilité debout et à la montée des escaliers.",
+    videoUrl: "/videos/placeholder-strength-01.mp4",
+    durationMinutes: 10,
+    difficulty: "beginner",
+    equipment: ["Chaise stable sans accoudoirs"],
+    instructions: [
+      "Asseyez-vous droit sur une chaise, pieds à plat au sol.",
+      "Tendez lentement la jambe droite devant vous, sans verrouiller le genou.",
+      "Maintenez 3 secondes.",
+      "Redescendez lentement.",
+      "Répétez 10 fois par jambe.",
+      "Reposez-vous 1 minute entre les séries.",
+    ],
+    contraindications: [
+      "Éviter en cas de douleur aiguë au genou.",
+      "Ne pas verrouiller brutalement le genou en fin d'extension.",
+      "Éviter en cas de prothèse de genou récente sans avis médical.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Mouvement lent et contrôlé. Ne pas verrouiller le genou.",
+  },
+  {
+    id: "str-002",
+    title: "Flexion des biceps avec élastique (assis)",
+    category: "strength",
+    description:
+      "Renforcement des bras en position assise avec un élastique de résistance légère : fléchir les coudes en gardant les coudes près du corps. Peut améliorer la force pour porter des objets légers.",
+    videoUrl: "/videos/placeholder-strength-02.mp4",
+    durationMinutes: 12,
+    difficulty: "beginner",
+    equipment: ["Chaise stable", "Élastique de résistance légère"],
+    instructions: [
+      "Asseyez-vous droit, pieds à plat au sol.",
+      "Placez l'élastique sous vos pieds, saisissez les extrémités.",
+      "Coudes collés au corps, fléchissez lentement les avant-bras vers les épaules.",
+      "Maintenez 2 secondes en haut.",
+      "Redescendez lentement.",
+      "Répétez 10 à 12 fois.",
+    ],
+    contraindications: [
+      "Éviter en cas de douleur au coude ou à l'épaule.",
+      "Utiliser une résistance légère : ne pas forcer.",
+      "Éviter les mouvements brusques ou les à-coups.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Résistance légère uniquement. Mouvement lent, sans à-coup.",
+  },
+  {
+    id: "str-003",
+    title: "Renforcement des muscles extenseurs du dos (assis)",
+    category: "strength",
+    description:
+      "Exercice ciblé pour les muscles extenseurs du rachis en position assise : redresser légèrement le buste contre une résistance douce. Ce type d'exercice est souvent proposé pour soutenir la colonne, sous réserve d'un avis médical.",
+    videoUrl: "/videos/placeholder-strength-03.mp4",
+    durationMinutes: 8,
+    difficulty: "intermediate",
+    equipment: ["Chaise stable", "Élastique léger ou bande de résistance"],
+    instructions: [
+      "Asseyez-vous droit, élastique passé derrière le haut du dos, extrémités tenues devant.",
+      "Redressez très légèrement le buste vers l'arrière contre la résistance.",
+      "Maintenez 3 secondes.",
+      "Revenez à la position droite.",
+      "Répétez 8 à 10 fois.",
+      "Le mouvement doit être minime : pas d'extension forcée.",
+    ],
+    contraindications: [
+      "Éviter en cas de douleur vertébrale aiguë.",
+      "Ne pas réaliser d'extension forcée ou de cambrure excessive.",
+      "Éviter en cas de fracture vertébrale récente (< 3 mois) sans avis médical.",
+      "Arrêter si douleur dorsale apparaît.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Extension minime uniquement. Pas de cambrure. Arrêter si douleur.",
+  },
+
+  // ───── Posture ─────
+  {
+    id: "pos-001",
+    title: "Redressement postural assis",
+    category: "posture",
+    description:
+      "Prise de conscience et correction de la posture assise : allonger la colonne vertébrale vers le haut sans forcer. Peut aider à réduire la tension dorsale et favoriser une respiration plus ample.",
+    videoUrl: "/videos/placeholder-posture-01.mp4",
+    durationMinutes: 5,
+    difficulty: "beginner",
+    equipment: ["Chaise stable"],
+    instructions: [
+      "Asseyez-vous au bord de la chaise, pieds à plat au sol.",
+      "Imaginez un fil qui tire le sommet de votre tête vers le plafond.",
+      "Laissez les épaules descendre naturellement.",
+      "Maintenez cette posture pendant 10 secondes.",
+      "Relâchez doucement, puis répétez 5 fois.",
+    ],
+    contraindications: [
+      "Aucune contre-indication majeure.",
+      "Ne pas forcer si sensation d'étirement inconfortable.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Mouvement doux. Aucune force. Respirez normalement.",
+  },
+  {
+    id: "pos-002",
+    title: "Rétraction douce des omoplates",
+    category: "posture",
+    description:
+      "Renforcement postural des muscles du haut du dos : rapprocher légèrement les omoplates sans cambrer le bas du dos. Peut aider à corriger les épaules enroulées.",
+    videoUrl: "/videos/placeholder-posture-02.mp4",
+    durationMinutes: 6,
+    difficulty: "beginner",
+    equipment: ["Aucun"],
+    instructions: [
+      "Asseyez-vous ou tenez-vous debout, dos droit.",
+      "Rapprochez très légèrement les omoplates l'une vers l'autre.",
+      "Ne pas cambrer le bas du dos : le mouvement est uniquement entre les omoplates.",
+      "Maintenez 5 secondes.",
+      "Relâchez complètement.",
+      "Répétez 10 fois.",
+    ],
+    contraindications: [
+      "Éviter de cambrer le bas du dos pendant l'exercice.",
+      "Arrêter en cas de douleur entre les omoplates.",
+      "Ne pas hausser les épaules vers les oreilles.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Mouvement minime. Pas de cambrure lombaire. Épaules basses.",
+  },
+  {
+    id: "pos-003",
+    title: "Alignement debout contre un mur",
+    category: "posture",
+    description:
+      "Exercice de conscience posturale debout : aligner l'arrière de la tête, le haut du dos et les fesses contre un mur, sans forcer. Favorise une posture verticale naturelle.",
+    videoUrl: "/videos/placeholder-posture-03.mp4",
+    durationMinutes: 5,
+    difficulty: "beginner",
+    equipment: ["Mur dégagé"],
+    instructions: [
+      "Tenez-vous dos à un mur, talons à environ 10 cm du mur.",
+      "Reculez doucement jusqu'à effleurer le mur avec les fesses et le haut du dos.",
+      "L'arrière de la tête doit pouvoir effleurer le mur sans forcer le cou.",
+      "Maintenez 15 secondes en respirant normalement.",
+      "Éloignez-vous doucement, puis répétez 3 fois.",
+    ],
+    contraindications: [
+      "Ne pas forcer la tête contre le mur si raideur cervicale.",
+      "Éviter si inconfort au bas du dos en position debout prolongée.",
+      "Arrêter si vertige.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Aucune force. Effleurer le mur, pas pousser. Arrêter si vertige.",
+  },
+
+  // ───── Mobilité ─────
+  {
+    id: "mob-001",
+    title: "Cercles d'épaules lents",
+    category: "mobility",
+    description:
+      "Mobilité douce des épaules : cercles lents vers l'arrière pour détendre la ceinture scapulaire. Aucune contrainte vertébrale.",
+    videoUrl: "/videos/placeholder-mobility-01.mp4",
+    durationMinutes: 4,
+    difficulty: "beginner",
+    equipment: ["Aucun"],
+    instructions: [
+      "Tenez-vous debout ou asseyez-vous droit.",
+      "Levez légèrement les épaules vers les oreilles, puis roulez-les vers l'arrière.",
+      "Faites des cercles lents et réguliers.",
+      "Répétez 10 fois vers l'arrière.",
+      "Puis 5 fois vers l'avant.",
+      "Gardez les bras relâchés le long du corps.",
+    ],
+    contraindications: [
+      "Éviter les cercles rapides ou forcés.",
+      "Arrêter en cas de douleur à l'épaule.",
+      "Ne pas combiner avec des mouvements de tête rapides.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Lent et doux. Pas de mouvements brusques.",
+  },
+  {
+    id: "mob-002",
+    title: "Mobilité des chevilles assis",
+    category: "mobility",
+    description:
+      "Mobilité articulaire des chevilles en position assise : mouvements de flexion et d'extension, cercles légers. Peut préparer à la marche et réduire la raideur.",
+    videoUrl: "/videos/placeholder-mobility-02.mp4",
+    durationMinutes: 5,
+    difficulty: "beginner",
+    equipment: ["Chaise stable"],
+    instructions: [
+      "Asseyez-vous, pieds légèrement décollés du sol.",
+      "Pointez lentement les orteils vers le bas, puis relevez-les vers vous.",
+      "Répétez 10 fois.",
+      "Faites ensuite 5 cercles lents dans chaque sens avec chaque cheville.",
+      "Gardez les jambes détendues.",
+    ],
+    contraindications: [
+      "Éviter en cas d'entorse récente ou de douleur aiguë à la cheville.",
+      "Mouvements lents uniquement : pas de rotation forcée.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Lent et contrôlé. Arrêter si douleur à la cheville.",
+  },
+  {
+    id: "mob-003",
+    title: "Rotation douce du haut du corps assis",
+    category: "mobility",
+    description:
+      "Mobilité contrôlée du tronc en position assise : rotation très légère du haut du corps, amplitude limitée, sans forcer. Peut aider à maintenir la souplesse du dos en sécurité.",
+    videoUrl: "/videos/placeholder-mobility-03.mp4",
+    durationMinutes: 6,
+    difficulty: "intermediate",
+    equipment: ["Chaise stable"],
+    instructions: [
+      "Asseyez-vous droit, pieds à plat au sol, bras croisés sur la poitrine.",
+      "Tournez très légèrement le haut du corps vers la droite : amplitude minime, pas plus de 20 degrés.",
+      "Revenez au centre.",
+      "Tournez très légèrement vers la gauche.",
+      "Répétez 5 fois de chaque côté.",
+      "Le mouvement doit être lent et sans élan.",
+    ],
+    contraindications: [
+      "Éviter les rotations rapides, répétitives ou en fin d'amplitude.",
+      "Éviter en cas de fracture vertébrale récente (< 3 mois) sans avis médical.",
+      "Arrêter en cas de douleur vertébrale pendant la rotation.",
+      "Ne pas forcer l'amplitude : rester dans le confort.",
+    ],
+    approvedByProfessional: false,
+    safetyNote: "Amplitude MINIME uniquement. Jamais de rotation forcée. Arrêter si douleur.",
+  },
+];
